@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wxuy.example.dubbo</groupId>
+    <artifactId>example-dubbo</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>provider-service</module>
+        <module>consumer-service</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.0.RELEASE</version>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <dubbo.version>2.7.3</dubbo.version>
+        <zookeeperclient.version>0.1</zookeeperclient.version>
+        <zookeeper.version>3.4.14</zookeeper.version>
+        <curator-framework.verison>2.12.0</curator-framework.verison>
+        <curator-recipes.version>2.12.0</curator-recipes.version>
+        <spring.boot.version>2.0.3.RELEASE</spring.boot.version>
+        <junit.version>5.5.0</junit.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo-spring-boot-starter -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.github.sgroschupf/zkclient -->
+            <dependency>
+                <groupId>com.github.sgroschupf</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${zookeeperclient.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.curator/curator-framework -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator-framework.verison}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.curator/curator-recipes -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator-recipes.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

@@ -1,0 +1,12 @@
+server:
+  port: 8001
+dubbo:
+  application:
+    name: provider-service
+  registry:
+    address: zookeeper://47.111.117.36:2181
+    timeout: 60000
+  scan:
+    base-packages: com.wxuy.dubbo.provider.providerservice.service
+#logging:
+#  config: classpath:logback-spring.xml
